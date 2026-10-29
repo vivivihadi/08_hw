@@ -8,11 +8,11 @@ export async function generateMetadata({ params }: NoteDetailsPageProps): Promis
     const note = await fetchNoteById(id);
 
     return {
-        title: `NoteHub | ${note.tag}`,
+        title: `NoteHub | ${note.title}`,
         description: note.content.slice(0, 30),
         openGraph: {
-            title: `NoteHub | ${note.tag}`,
-        description: note.content.slice(0, 30),
+            title: `NoteHub | ${note.title}`,
+            description: note.content.slice(0, 30),
             url: `https://08zustand.vercel.app/notes/${id}`,
             images: [
                 {
